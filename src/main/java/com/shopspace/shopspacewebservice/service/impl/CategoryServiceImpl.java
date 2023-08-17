@@ -15,6 +15,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryDTO> getCategoriesActive() {
-        return categoryClient.getAllCategories();
+        return categoryClient.getCategoriesByStatus(1);
     }
 }

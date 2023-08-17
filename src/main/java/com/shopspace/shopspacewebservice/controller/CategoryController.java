@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
@@ -18,7 +16,7 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping()
-    public ResponseEntity<ResponseDTO> getCategories(){
+    public ResponseEntity<ResponseDTO> getCategoriesActive(){
         return ResponseUtil.ok(categoryService.getCategoriesActive());
     }
 }
