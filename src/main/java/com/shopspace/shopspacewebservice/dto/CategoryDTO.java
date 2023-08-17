@@ -3,15 +3,13 @@ package com.shopspace.shopspacewebservice.dto;
 public class CategoryDTO {
     private Long id;
     private String name;
-    private Integer status;
 
     public CategoryDTO() {
     }
 
-    public CategoryDTO(Long id, String name, Integer status) {
+    public CategoryDTO(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.status = status;
     }
 
     public Long getId() {
@@ -30,20 +28,11 @@ public class CategoryDTO {
         this.name = name;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "CategoryDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", status=" + status +
                 '}';
     }
 }

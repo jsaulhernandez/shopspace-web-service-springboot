@@ -15,8 +15,8 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @GetMapping()
-    public ResponseEntity<ResponseDTO> getCategoriesActive(){
+    @GetMapping("/top")
+    public ResponseEntity<ResponseDTO> getTopCategories(){
         return ResponseUtil.ok(categoryService.getCategoriesActive());
     }
 }
