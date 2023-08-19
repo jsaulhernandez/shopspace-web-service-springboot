@@ -12,4 +12,6 @@ import java.util.List;
 public interface CategoryClient {
     @GetMapping("/by-status")
     List<CategoryDTO> getCategoriesByStatus(@RequestParam Integer status);
+    @GetMapping("/top")
+    List<CategoryDTO> getTopCategories(@RequestParam Integer total);
 }

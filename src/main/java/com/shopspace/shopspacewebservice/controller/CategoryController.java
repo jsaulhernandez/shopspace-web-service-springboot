@@ -22,6 +22,6 @@ public class CategoryController {
 
     @GetMapping("/top")
     public ResponseEntity<ResponseDTO> getTopCategories(){
-        return ResponseUtil.ok(categoryService.getActiveCategories());
+        return ResponseUtil.ok(categoryService.getTopCategories());
     }
 }

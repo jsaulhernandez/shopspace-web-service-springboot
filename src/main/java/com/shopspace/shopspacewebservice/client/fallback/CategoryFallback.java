@@ -20,6 +20,12 @@ public class CategoryFallback implements FallbackFactory<CategoryClient> {
                 logger.error("[Fallback] not call getCategoriesByStatus");
                 return null;
             }
+
+            @Override
+            public List<CategoryDTO> getTopCategories(Integer total) {
+                logger.error("[Fallback] not call getTopCategories");
+                return null;
+            }
         };
     }
 }
