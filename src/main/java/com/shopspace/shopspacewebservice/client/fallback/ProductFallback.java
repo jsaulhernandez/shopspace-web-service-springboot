@@ -13,6 +13,7 @@ public class ProductFallback implements FallbackFactory<ProductClient> {
     @Override
     public ProductClient create(Throwable cause) {
         logger.error("An exception occurred when calling the ProductClient", cause);
+
         return new ProductClient() {
             @Override
             public List<ProductDTO> getLastProductsWithLimit(Integer page, Integer size) {
