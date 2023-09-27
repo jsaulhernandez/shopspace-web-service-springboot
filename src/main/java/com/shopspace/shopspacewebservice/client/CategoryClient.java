@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(contextId = "category", value = "${shopspace.feign.config.name}", url = "${shopspace.feign.config.url}/category", fallbackFactory = CategoryFallback.class)
+@FeignClient(contextId = "category", value = "${shopspace-data.feign.config.name}", url = "${shopspace-data.feign.config.url}/category", fallbackFactory = CategoryFallback.class)
 public interface CategoryClient {
     @GetMapping("/by-status")
     List<CategoryDTO> getCategoriesByStatus(@RequestParam Integer status);
