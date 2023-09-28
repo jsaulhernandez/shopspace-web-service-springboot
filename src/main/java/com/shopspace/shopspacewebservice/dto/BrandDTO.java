@@ -3,15 +3,15 @@ package com.shopspace.shopspacewebservice.dto;
 public class BrandDTO {
     private Long id;
     private String name;
-    private Integer status;
+    private String image;
 
     public BrandDTO() {
     }
 
-    public BrandDTO(Long id, String name, Integer status) {
+    public BrandDTO(Long id, String name, String image) {
         this.id = id;
         this.name = name;
-        this.status = status;
+        this.image = image;
     }
 
     public Long getId() {
@@ -30,16 +30,20 @@ public class BrandDTO {
         this.name = name;
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getImage() {
+        return image;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
-        return "BrandDTO{" + "id=" + id + ", name='" + name + '\'' + ", status=" + status + '}';
+        return "BrandDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }
