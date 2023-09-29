@@ -3,6 +3,7 @@ package com.shopspace.shopspacewebservice.config;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shopspace.shopspacewebservice.dto.response.ResponseDTO;
+import com.shopspace.shopspacewebservice.exception.ResourceNotFoundException;
 import com.shopspace.shopspacewebservice.util.ResponseUtil;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
@@ -64,5 +65,15 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 				return ResponseUtil.badRequest(resp);
 			}
 		}
+	}
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ResponseDTO> resourceNotFound(ResourceNotFoundException ex) {
+		ResponseEntity<ResponseDTO> response = ResponseUtil.badRequest(ex.getCause());
+		ResponseDTO responseBody = response.getBody();
+
+		if (responseBody != null) responseBody.setStatusMessage(ex.getMessage());
+
+		return new ResponseEntity<>(responseBody, HttpStatus.BAD_REQUEST);
 	}
 }
