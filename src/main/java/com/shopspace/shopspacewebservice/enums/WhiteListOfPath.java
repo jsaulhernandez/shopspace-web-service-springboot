@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum WhiteListOfPath {
-    CATEGORY("/category/**"), PRODUCT("/product/**"), MEDIA("/media/**");
+    CATEGORY("/category/**"), PRODUCT("/product/**"), BRAND("/brand/**"), MEDIA("/media/**");
     private String path;
 
     WhiteListOfPath(String path) {
