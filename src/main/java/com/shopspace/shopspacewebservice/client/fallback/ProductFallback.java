@@ -20,6 +20,12 @@ public class ProductFallback implements FallbackFactory<ProductClient> {
                 logger.error("[Fallback] not call getLastProductsWithLimit");
                 return null;
             }
+
+            @Override
+            public List<ProductDTO> getProductsByCategoryWithLimit(Integer idCategory, Integer page, Integer size) {
+                logger.error("[Fallback] not call getProductsByCategoryWithLimit");
+                return null;
+            }
         };
     }
 }

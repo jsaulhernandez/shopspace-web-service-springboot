@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ProductService {
     List<ProductDTO> getLastSixProducts();
+
+    List<ProductDTO> getProductsByCategory(Integer category);
 }

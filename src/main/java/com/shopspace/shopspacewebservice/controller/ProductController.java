@@ -5,9 +5,7 @@ import com.shopspace.shopspacewebservice.service.ProductService;
 import com.shopspace.shopspacewebservice.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/product")
@@ -18,5 +16,10 @@ public class ProductController {
     @GetMapping("/last-six")
     public ResponseEntity<ResponseDTO> getLastSixProducts(){
         return ResponseUtil.ok(productService.getLastSixProducts());
+    }
+
+    @GetMapping("/by-category/{category}")
+    public ResponseEntity<ResponseDTO> getProductsByCategory(@PathVariable Integer category){
+        return ResponseUtil.ok(productService.getProductsByCategory(category));
     }
 }
