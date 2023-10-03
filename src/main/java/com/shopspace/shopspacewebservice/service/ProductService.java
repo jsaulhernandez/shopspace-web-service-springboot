@@ -7,5 +7,5 @@ import java.util.List;
 public interface ProductService {
     List<ProductDTO> getLastSixProducts();
 
-    List<ProductDTO> getProductsByCategory(Integer category);
+    List<ProductDTO> getProductsByCategory(Long category);
 }

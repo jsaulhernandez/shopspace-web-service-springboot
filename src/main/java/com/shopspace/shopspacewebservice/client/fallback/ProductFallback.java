@@ -22,7 +22,7 @@ public class ProductFallback implements FallbackFactory<ProductClient> {
             }
 
             @Override
-            public List<ProductDTO> getProductsByCategoryWithLimit(Integer idCategory, Integer page, Integer size) {
+            public List<ProductDTO> getProductsByCategoryWithLimit(Long idCategory, Integer page, Integer size) {
                 logger.error("[Fallback] not call getProductsByCategoryWithLimit");
                 return null;
             }

@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
      * @return product list by category
      */
     @Override
-    public List<ProductDTO> getProductsByCategory(Integer category) {
+    public List<ProductDTO> getProductsByCategory(Long category) {
         category = category == 0 ? null : category;
         return productClient.getProductsByCategoryWithLimit(category, 0, 8);
     }

@@ -13,5 +13,5 @@ public interface ProductClient {
     @GetMapping("/limit-data")
     List<ProductDTO> getLastProductsWithLimit(@RequestParam Integer page, @RequestParam Integer size);
     @GetMapping("/by-category")
-    List<ProductDTO> getProductsByCategoryWithLimit(@RequestParam Integer idCategory, @RequestParam Integer page, @RequestParam Integer size);
+    List<ProductDTO> getProductsByCategoryWithLimit(@RequestParam Long idCategory, @RequestParam Integer page, @RequestParam Integer size);
 }

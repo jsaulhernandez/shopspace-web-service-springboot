@@ -19,7 +19,7 @@ public class ProductController {
     }
 
     @GetMapping("/by-category/{category}")
-    public ResponseEntity<ResponseDTO> getProductsByCategory(@PathVariable Integer category){
+    public ResponseEntity<ResponseDTO> getProductsByCategory(@PathVariable Long category){
         return ResponseUtil.ok(productService.getProductsByCategory(category));
     }
 }
