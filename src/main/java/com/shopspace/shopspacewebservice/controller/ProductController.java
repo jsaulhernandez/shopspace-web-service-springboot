@@ -22,4 +22,9 @@ public class ProductController {
     public ResponseEntity<ResponseDTO> getProductsByCategory(@PathVariable Long category){
         return ResponseUtil.ok(productService.getProductsByCategory(category));
     }
+
+    @GetMapping("/by-type-classification")
+    public ResponseEntity<ResponseDTO> getProductsByTypeClassification(@RequestParam Long idProduct, @RequestParam Long idTypeClassification){
+        return ResponseUtil.ok(productService.getProductsByTypeClassification(idProduct, idTypeClassification));
+    }
 }

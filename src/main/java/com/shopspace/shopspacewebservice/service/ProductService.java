@@ -8,4 +8,6 @@ public interface ProductService {
     List<ProductDTO> getLastSixProducts();
 
     List<ProductDTO> getProductsByCategory(Long category);
+
+    List<ProductDTO> getProductsByTypeClassification(Long idProduct, Long idTypeClassification);
 }

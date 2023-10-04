@@ -32,4 +32,9 @@ public class ProductServiceImpl implements ProductService {
         category = category == 0 ? null : category;
         return productClient.getProductsByCategoryWithLimit(category, 0, 8);
     }
+
+    @Override
+    public List<ProductDTO> getProductsByTypeClassification(Long idProduct, Long idTypeClassification) {
+        return productClient.getProductsByTypeClassificationWithLimit(idProduct, idTypeClassification, 0, 8);
+    }
 }
