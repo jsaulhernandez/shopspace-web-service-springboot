@@ -47,4 +47,13 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getProductsByWeek() {
         return productClient.getProductsByWeekWithLimit(ConstantsShopspace.TOP_PRODUCTS_SALE_WEEK, 0, 6);
     }
+
+    /**
+     *
+     * @return most selling products
+     */
+    @Override
+    public List<ProductDTO> getMostSellingProducts() {
+        return productClient.getMostSellingProducts(ConstantsShopspace.TOP_PRODUCTS_MORE_SELLING, 0, 6);
+    }
 }

@@ -32,4 +32,9 @@ public class ProductController {
     public ResponseEntity<ResponseDTO> getProductsByWeek(){
         return ResponseUtil.ok(productService.getProductsByWeek());
     }
+
+    @GetMapping("/most-selling")
+    public ResponseEntity<ResponseDTO> getMostSellingProducts(){
+        return ResponseUtil.ok(productService.getMostSellingProducts());
+    }
 }

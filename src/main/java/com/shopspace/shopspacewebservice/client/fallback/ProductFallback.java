@@ -38,6 +38,12 @@ public class ProductFallback implements FallbackFactory<ProductClient> {
                 logger.error("[Fallback] not call getProductsByWeekWithLimit");
                 return null;
             }
+
+            @Override
+            public List<ProductDTO> getMostSellingProducts(Integer totalSales, Integer page, Integer size) {
+                logger.error("[Fallback] not call getMostSellingProducts");
+                return null;
+            }
         };
     }
 }

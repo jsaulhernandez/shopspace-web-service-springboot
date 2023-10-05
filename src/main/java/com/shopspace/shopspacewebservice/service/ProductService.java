@@ -12,4 +12,6 @@ public interface ProductService {
     List<ProductDTO> getProductsByTypeClassification(Long idProduct, Long idTypeClassification);
 
     List<ProductDTO> getProductsByWeek();
+
+    List<ProductDTO> getMostSellingProducts();
 }
