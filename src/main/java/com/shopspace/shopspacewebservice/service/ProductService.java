@@ -10,4 +10,6 @@ public interface ProductService {
     List<ProductDTO> getProductsByCategory(Long category);
 
     List<ProductDTO> getProductsByTypeClassification(Long idProduct, Long idTypeClassification);
+
+    List<ProductDTO> getProductsByWeek();
 }

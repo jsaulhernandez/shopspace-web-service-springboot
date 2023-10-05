@@ -1,6 +1,7 @@
 package com.shopspace.shopspacewebservice.service.impl;
 
 import com.shopspace.shopspacewebservice.client.ProductClient;
+import com.shopspace.shopspacewebservice.config.ConstantsShopspace;
 import com.shopspace.shopspacewebservice.dto.ProductDTO;
 import com.shopspace.shopspacewebservice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,14 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTO> getProductsByTypeClassification(Long idProduct, Long idTypeClassification) {
         return productClient.getProductsByTypeClassificationWithLimit(idProduct, idTypeClassification, 0, 8);
+    }
+
+    /**
+     *
+     * @return most selled products during the week
+     */
+    @Override
+    public List<ProductDTO> getProductsByWeek() {
+        return productClient.getProductsByWeekWithLimit(ConstantsShopspace.TOP_PRODUCTS_SALE_WEEK, 0, 6);
     }
 }

@@ -16,4 +16,6 @@ public interface ProductClient {
     List<ProductDTO> getProductsByCategoryWithLimit(@RequestParam Long idCategory, @RequestParam Integer page, @RequestParam Integer size);
     @GetMapping("/by-type-classification")
     List<ProductDTO> getProductsByTypeClassificationWithLimit(@RequestParam Long idProduct, @RequestParam Long idTypeClassification, @RequestParam Integer page, @RequestParam Integer size);
+    @GetMapping("/by-week")
+    List<ProductDTO> getProductsByWeekWithLimit(@RequestParam Integer totalSales, @RequestParam Integer page, @RequestParam Integer size);
 }

@@ -27,4 +27,9 @@ public class ProductController {
     public ResponseEntity<ResponseDTO> getProductsByTypeClassification(@RequestParam Long idProduct, @RequestParam Long idTypeClassification){
         return ResponseUtil.ok(productService.getProductsByTypeClassification(idProduct, idTypeClassification));
     }
+
+    @GetMapping("/by-week")
+    public ResponseEntity<ResponseDTO> getProductsByWeek(){
+        return ResponseUtil.ok(productService.getProductsByWeek());
+    }
 }
