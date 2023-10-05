@@ -13,11 +13,6 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @GetMapping("/last-six")
-    public ResponseEntity<ResponseDTO> getLastSixProducts(){
-        return ResponseUtil.ok(productService.getLastSixProducts());
-    }
-
     @GetMapping("/by-category/{category}")
     public ResponseEntity<ResponseDTO> getProductsByCategory(@PathVariable Long category){
         return ResponseUtil.ok(productService.getProductsByCategory(category));
@@ -26,15 +21,5 @@ public class ProductController {
     @GetMapping("/by-type-classification")
     public ResponseEntity<ResponseDTO> getProductsByTypeClassification(@RequestParam Long idProduct, @RequestParam Long idTypeClassification){
         return ResponseUtil.ok(productService.getProductsByTypeClassification(idProduct, idTypeClassification));
-    }
-
-    @GetMapping("/by-week")
-    public ResponseEntity<ResponseDTO> getProductsByWeek(){
-        return ResponseUtil.ok(productService.getProductsByWeek());
-    }
-
-    @GetMapping("/most-selling")
-    public ResponseEntity<ResponseDTO> getMostSellingProducts(){
-        return ResponseUtil.ok(productService.getMostSellingProducts());
     }
 }
