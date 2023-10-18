@@ -29,7 +29,7 @@ public class CombineController {
         return ResponseUtil.ok(Map.of("activeBrands", brandService.getActiveBrands(), "topCategories", categoryService.getTopCategories(), "activeCategories", categoryService.getActiveCategories()));
     }
 
-    //Todo: return products list that don't require filters
+    // Todo: return products list that don't require filters
     @GetMapping("/home-products")
     public ResponseEntity<ResponseDTO> getHomeProducts(){
         return ResponseUtil.ok(Map.of("lastSix", productService.getLastSixProducts(), "byWeek", productService.getProductsByWeek(), "mostSelling", productService.getMostSellingProducts()));
