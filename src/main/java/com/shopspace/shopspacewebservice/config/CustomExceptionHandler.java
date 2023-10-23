@@ -69,7 +69,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<ResponseDTO> resourceNotFound(ResourceNotFoundException ex) {
-		ResponseEntity<ResponseDTO> response = ResponseUtil.badRequest(ex.getCause());
+		ResponseEntity<ResponseDTO> response = ResponseUtil.notContent(ex.getCause());
 		ResponseDTO responseBody = response.getBody();
 
 		if (responseBody != null) responseBody.setStatusMessage(ex.getMessage());
