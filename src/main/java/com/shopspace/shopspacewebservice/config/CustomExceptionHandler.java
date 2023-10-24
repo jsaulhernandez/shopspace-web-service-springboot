@@ -3,6 +3,7 @@ package com.shopspace.shopspacewebservice.config;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shopspace.shopspacewebservice.dto.response.ResponseDTO;
+import com.shopspace.shopspacewebservice.exception.BadRequestException;
 import com.shopspace.shopspacewebservice.exception.ResourceNotFoundException;
 import com.shopspace.shopspacewebservice.util.ResponseUtil;
 import feign.FeignException;
@@ -70,6 +71,16 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<ResponseDTO> resourceNotFound(ResourceNotFoundException ex) {
 		ResponseEntity<ResponseDTO> response = ResponseUtil.notContent(ex.getCause());
+		ResponseDTO responseBody = response.getBody();
+
+		if (responseBody != null) responseBody.setStatusMessage(ex.getMessage());
+
+		return new ResponseEntity<>(responseBody, HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(BadRequestException.class)
+	public ResponseEntity<ResponseDTO> badRequest(BadRequestException ex) {
+		ResponseEntity<ResponseDTO> response = ResponseUtil.badRequest(ex.getCause());
 		ResponseDTO responseBody = response.getBody();
 
 		if (responseBody != null) responseBody.setStatusMessage(ex.getMessage());
