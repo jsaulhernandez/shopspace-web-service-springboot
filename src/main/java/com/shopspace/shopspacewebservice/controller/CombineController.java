@@ -4,6 +4,7 @@ import com.shopspace.shopspacewebservice.dto.response.ResponseDTO;
 import com.shopspace.shopspacewebservice.service.BrandService;
 import com.shopspace.shopspacewebservice.service.CategoryService;
 import com.shopspace.shopspacewebservice.service.ProductService;
+import com.shopspace.shopspacewebservice.service.TypeClassificationService;
 import com.shopspace.shopspacewebservice.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,14 @@ public class CombineController {
     BrandService brandService;
     @Autowired
     ProductService productService;
+    @Autowired
+    TypeClassificationService typeClassificationService;
+
+    // Todo: return active categories and type classification most selling
+    @GetMapping("/header")
+    public ResponseEntity<ResponseDTO> getCategoriesAndTypeClassification(){
+        return ResponseUtil.ok(Map.of("mostSellingTypeClassification", typeClassificationService.getMostSellingTypeClassification(), "activeCategories", categoryService.getActiveCategories()));
+    }
 
     // Todo: return active brands and categories, also return top categories
     @GetMapping("/home")

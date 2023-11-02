@@ -3,17 +3,23 @@ package com.shopspace.shopspacewebservice.dto;
 public class TypeClassificationDTO {
     private Long id;
     private String name;
-    private Integer status;
     private ClassificationCategoriesDTO classificationCategories;
+    private Integer available;
 
     public TypeClassificationDTO() {
     }
 
-    public TypeClassificationDTO(Long id, String name, Integer status, ClassificationCategoriesDTO classificationCategories) {
+    public TypeClassificationDTO(Long id, String name, ClassificationCategoriesDTO classificationCategories) {
         this.id = id;
         this.name = name;
-        this.status = status;
         this.classificationCategories = classificationCategories;
+    }
+
+    public TypeClassificationDTO(Long id, String name, ClassificationCategoriesDTO classificationCategories, Integer available) {
+        this.id = id;
+        this.name = name;
+        this.classificationCategories = classificationCategories;
+        this.available = available;
     }
 
     public Long getId() {
@@ -32,14 +38,6 @@ public class TypeClassificationDTO {
         this.name = name;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     public ClassificationCategoriesDTO getClassificationCategories() {
         return classificationCategories;
     }
@@ -48,8 +46,21 @@ public class TypeClassificationDTO {
         this.classificationCategories = classificationCategories;
     }
 
+    public Integer getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
+    }
+
     @Override
     public String toString() {
-        return "TypeClassificationDTO{" + "id=" + id + ", name='" + name + '\'' + ", status=" + status + ", classificationCategories=" + classificationCategories + '}';
+        return "TypeClassificationDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", classificationCategories=" + classificationCategories +
+                ", available=" + available +
+                '}';
     }
 }
