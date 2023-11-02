@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TypeClassificationService {
     List<TypeClassificationDTO> getMostSellingTypeClassification();
+
+    List<TypeClassificationDTO> getActiveTypesClassifications();
 }

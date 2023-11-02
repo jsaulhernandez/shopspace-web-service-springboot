@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class TypeClassificationServiceImpl implements TypeClassificationService {
@@ -29,5 +28,10 @@ public class TypeClassificationServiceImpl implements TypeClassificationService 
         }).toList();
 
         return data;
+    }
+
+    @Override
+    public List<TypeClassificationDTO> getActiveTypesClassifications() {
+        return typeClassificationClient.getTypesClassificationsByStatus(1);
     }
 }

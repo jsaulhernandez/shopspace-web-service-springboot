@@ -26,6 +26,12 @@ public class TypeClassificationFallback implements FallbackFactory<TypeClassific
                 logger.error("[Fallback] not call getTypeClassificationAvailableByProduct");
                 return null;
             }
+
+            @Override
+            public List<TypeClassificationDTO> getTypesClassificationsByStatus(Integer status) {
+                logger.error("[Fallback] not call getTypesClassificationsByStatus");
+                return null;
+            }
         };
     }
 }
